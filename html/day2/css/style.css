@@ -1,0 +1,49 @@
+body{
+    /*색상코드 : 2자리 단위로 붉은색, 녹색, 푸른색을 결정함*/
+    /*rgba : 마지막 소수점 0~1 사이의 숫자로 투명도를 결정한다(1=불투명)*/
+    background-color: rgba(100,189,178,0.3);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    /*기본글씨 크기는 16px*/
+    font-size: 18px;
+    border: double 3px #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    /*boock속성의 가운데 정렬은 좌우에 여백이 있어야한다
+        width로 폭을 지정해서 좌우 크기를 줄이면 움직일 여지가 생긴다
+        auto를 활용해서 화면 중앙으로 배치시킨다
+        좌우로 여백을 잡는다*/
+    margin:20px auto;
+    width: 300px;
+    text-align: center;
+}
+/* p태그와 ul태그 안의 텍스트와 이미지는 text-align:center로 가운데 정렬 가능*/
+p, ul{
+    text-align: center;
+    margin-bottom: 20px;
+}
+img{
+    border-radius: 50%;
+}
+a{
+    background-color: rgba(212,104,122);
+    display: block;
+    padding: 20px 0;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: bold;
+}
+ul{
+    width: 300px;
+    margin: 0 auto;
+}
+li{
+    margin-bottom: 20px;
+}
+
+/*박스크기의 두가지 유형 : content-box & border-box
+    content-box : padding과 border는 width에 포함되지 않는다
+    border-box : padding과 border는 width에 포함된다
+    초기상태는 content-box로 지정되어 있으므로 사이즈 지정에 주의
+    여백과 경계선의 너비를 포함해서 크기를 정한건지 아닌건지 확인 필요*/
