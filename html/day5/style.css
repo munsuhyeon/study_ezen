@@ -1,0 +1,211 @@
+.innerWrap{
+    border: 5px solid blue;
+    width: 1240px;
+    margin: 0 auto;
+    padding: 80px 20px 0;
+}
+main h2{
+    letter-spacing: 0.25em; /*글자간격 조절 0.5em은 글자높이 1/4을 의미*/
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 80px;
+}
+
+header{
+    background: url(images/hero.jpg) no-repeat right center/cover; /* 순서 : image,repeat,position,size */
+    height: 720px;
+}
+header h1{
+    padding-top: 120px;
+}
+header .innerWrap{
+    height: 720px;
+    /* 요소의 위치를 지정할 때 position을 통해 요소를 배치할 수 있다
+        요소의 위치의 기준이 될 부모요소에 position:relative를 작성한다.
+        움직이고자 하는 자식 요소에 positon : absolutes를 작성하여 구체적인 위치를 나타낸다*/
+    position: relative;
+}
+header .scroll{
+    /*position : absolute옵션을 적용하면 p요소가 화면을 가득 채우는 block성질을 잃는다.(class="scroll")
+    강제로 화면을 가득 채우는 성질을 회복하도록 width : 100%를 사용한다.*/
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+}
+header .scroll img{
+    margin-top: 8px;
+}
+header nav{
+    /*position : fixed옵션을 적용하면 block성질을 잃는다.
+    width:100%를 사용해서 가로폭을 채우는 성질을 회복한다.*/
+    position: fixed;
+    /* <position>
+    static : 기본 설정값, html문서 상에서 원래 있어야 하는 위치에 배치된다.top,right,bottom,left 프로퍼티가 무시된다.
+    relative : static(기존의 위치)에서 top,right,bottom,left 프로퍼티를 적용하여 위치를 이동한다.
+    absolute : 가장 가까운 상위요소를 기준으로 위치를 결정한다.
+    fixed : 요소를 항상 고정된 위치에 배치할 수 있다
+    sticky : 브라우저 화면을 스크롤할 때 효과가 나타난다
+    color(프로퍼티):red(값) CSS 프로퍼티에는 키워드, 크기 단위, 색상 표현 단위 등의 특정 단위를 갖는 값을 지정한다
+    */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+header nav ul{
+    display: flex;
+    width: 1240px;
+    margin: 0 auto;
+    justify-content: space-around;
+    padding: 10px 20px
+}
+header nav ul li a:hover{ /*가상선택자 = a:hover*/
+    text-decoration: underline;
+}
+/* position으로 구도를 잡으면 부모 자식 요소들끼리 원치않는 형태로 겹칠때가 있다. 
+    해당 부모 자식간 위치선정을 할 수 있는데 이때 쓰는게 z-index로 우선순위를 정한다.
+    값이 클수록 앞으로 나온다.*/
+.msgSec{
+    background-color: #fbfaf7;
+}    
+.msgSec p{
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+/*인접한 요소에 상하방향으로 margin을 지정할 때
+40+80=120는 일어나지 않는다(마진이 겹친다)
+마진상쇄가 발생할 시 더 큰값의 마진만 적용된다.*/
+.msgSec p.illust{
+    margin-top: 80px;
+    margin-bottom: 0;
+    position: relative;
+    /*카피조우 그림 옆에 잎사귀그림을 붙이려면 카피조우를 relative로 기준으로 지정하고 
+    잎사귀를 absolute로 위치를 조정하자*/
+}
+/* css 우선순위
+    1.밑으로 온 파일이 우선순위를 갖는다
+    2.구체적인 태그가 우선순위를 갖는다
+    타입선택자 --> 클래스 속성 --> id속성 --> 태그에 직접 작성된 css
+*/
+
+.msgSec p.illust::before{ /*::before는 그 요소 앞을 뜻하는 가상요소이다*/
+content: url(images/deco_left.png);
+position: absolute;
+left: 320px;
+bottom: -30px;
+}
+.msgSec p.illust::after{ /*::after 그 요소 앞을 뜻하는 가상요소이다*/
+    content: url(images/deco_right.png);
+    position: absolute;
+    right: 320px;
+    bottom: -30px;
+    }
+.dataSec{
+background-color: #ffffff;
+padding-bottom: 120px;
+}
+.dataSec .layoutWrap{
+    display: flex;
+}
+/*flex하고나면 flex안에 구성요소 너비를 배정해주자*/
+.dataSec .layoutWrap > p{ /* > : 자식선택자 .dateSec 안에 .layoutWrap안에 p태그들 선택*/
+    flex-basis: 735px;
+}
+.dataSec .layoutWrap > div{
+    flex-basis: 465px;
+    padding-top: 100px;
+}
+.dataSec .dateDetailSec{
+    font-size: 72px;
+    margin: 0 0 170px -100px;
+    background-color: #ffffff;
+    padding: 40px 64px;
+    line-height: 1.2;
+
+}
+.word1{
+    font-size: 50px;
+}
+.word2{
+    font-size: 40px;
+}
+.word3{
+    font-size: 60px;
+}
+.accessSec{
+    margin-left: 48px;
+}
+.accessSec h3{
+    color: #cfafa3;
+    font-size: 55px;
+    letter-spacing: .05em;
+    margin-bottom: 8px;
+}
+.accessSec p{
+    line-height: 1.6;
+}
+.formSec{
+    background-color: #efe8d9;
+    padding: 60px;
+}
+form{
+    width: 600px;
+    margin: 0 auto;
+}
+/* input[type="text"] 이런식의 선택자를 속성 선택자라 한다.
+    input[type] => input 안에 type 들어간 선택자 전부
+    [type="text"] => input태그 아니어도 되니까 해당 조건 태그 전부 다*/
+input[type="text"],input[type="email"],select,textarea{
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    width: 100%;
+    margin-top: 5px;
+    padding: 4px 5px;
+}
+input[type="radio"],input[type="checkbox"]{
+    width: 16px;
+    height: 16px;
+    vertical-align: baseline;
+    margin-right: 4px;
+}
+.attendRadio{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.attendRadio label{
+    margin: 0 20px;
+    font-size: 24px;
+}
+.allergyCheck label{
+    margin-right: 24px;
+}
+select{
+    background: #ffffff url(images/arrow.png) no-repeat 98% 50%/17px 10px;
+}
+textarea{
+    height: 148px;
+    margin-bottom: 30px;
+}
+form > p{
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+.submitBtn{
+    text-align: center;
+}
+input[type="submit"]{
+    background-color: #121212;
+    color: #ffffff;
+    padding: 18px 80px;
+}
+footer{
+    background-color: #c7887f;
+    color: #f3e9e5;
+    padding: 14px 10px 20px;
+    text-align: center;
+}
+ 
