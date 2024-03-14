@@ -1,0 +1,31 @@
+body{
+    background-color: #FFF2E6;
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    color: #333333;
+}
+.trophy{
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+}
+.trophy img{
+    border-radius: 50%;
+}
+.text1{
+    color: #CC3D3D;
+    font-size: 50px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: #CC3D3D;
+}
+.weekPage h1{
+    margin-top: 50px;
+}
+.weekPage p {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 16px;
+}
