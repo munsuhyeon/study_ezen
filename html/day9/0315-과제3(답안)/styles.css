@@ -1,0 +1,64 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(244,234,255);
+}
+h1{
+    font-size: 52px;
+    color: rgb(88,49,196);
+}
+header{
+    text-align: center;
+    padding: 32px;
+}
+header img{
+    width: 300px; /*이미지의 높이나 넓이를 조절하였을 때 나머지는 이미지 비율에 따라 자동 조절된다*/
+}
+
+main{
+    width: 700px;
+    background-color: rgb(122,74,218);
+    margin: 32px auto;
+    padding: 32px;
+    border-radius: 8px;
+    color: rgb(248,241,255);
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* 왼쪽에 10px여백을 두고 상,하단 여백 14px 설정
+   왼쪽에 투명한 굵은 선을 그어줬다(지금 우리 눈에는 안보인다)*/
+li{
+    margin: 14px;
+    padding-left: 10px;
+    border-left: 5px solid transparent;
+}
+.extra-important{
+    color: rgb(255,237,177);
+    border-color: rgb(255,237,177);
+}
+a{
+    text-decoration: none;
+    color: rgb(36,3,102);
+    background-color: rgb(255,237,177);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+/* a:active = a링크를 클릭하는 동안*/
+a:hover, a:active{
+    background-color: rgb(250,201,39);
+}
+
+footer{
+    text-align: center;
+    margin-bottom: 100px;
+}
+footer a{
+    padding: 12px 20px;
+    background-color: rgb(250,201,39);
+    border-radius: 8px;
+}
+footer a:hover{
+    background-color: rgb(255,186,58);
+}
