@@ -1,0 +1,112 @@
+<!DOCTYPE html> <!-- 문서 형식 선언 -->
+<html lang="ko"> <!-- 언어 속성을 지정한 HTML 시작 -->
+  <head>
+    <meta charset="UTF-8" /> <!-- 문자 인코딩 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 화면 크기에 따른 반응형 설정 -->
+    <title>문의 양식 도전</title> <!-- 문서 제목 -->
+    <link rel="stylesheet" href="style.css" /> <!-- 외부 스타일 시트 연결 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&family=Oswald:wght@700&display=swap"rel="stylesheet"/>
+  </head>
+  <body>
+    <header>
+      <h1>문의하기</h1> <!-- 헤더와 제목 -->
+    </header>
+    <main>
+      <!-- 문의 양식 시작 -->
+      <form action="/challenge" method="GET"> <!-- 양식 열기, 데이터 전송 방식 설정 -->
+        <section>
+          <h2>어떻게 도와 드릴까요?</h2> <!-- 섹션 제목 -->
+          <ul>
+            <li>
+              <label for="username">당신의 이름</label> <!-- 입력 필드 레이블 -->
+              <input type="text" id="username" name="username" required /> <!-- 텍스트 입력 필드 -->
+            </li>
+            <li>
+              <label for="email">이메일 주소</label>
+              <input type="email" id="email" name="email" required /> <!-- 이메일 입력 필드 -->
+            </li>
+            <li>
+              <label for="phone">전화번호</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                minlength="5"
+              /> <!-- 전화번호 입력 필드 -->
+            </li>
+            <li>
+              <label for="message">메시지</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                minlength="10"
+                maxlength="200"
+                rows="6"
+              ></textarea> <!-- 여러 줄의 텍스트 입력 필드 -->
+            </li>
+          </ul>
+        </section>
+        <section>
+          <label for="channel">어떻게 저희를 찾았나요?</label> <!-- 드롭다운 메뉴 레이블 -->
+          <select name="channel" id="channel" required> <!-- 드롭다운 메뉴 -->
+            <option value="search">웹 검색</option> <!-- 옵션 1 -->
+            <option value="word-of-mouth">소문</option> <!-- 옵션 2 -->
+            <option value="other">기타</option> <!-- 옵션 3 -->
+          </select>
+        </section>
+        <section>
+          <h2>어떻게 회신을 원하시나요?</h2> <!-- 섹션 제목 -->
+          <ul>
+            <li class="inline-control">
+              <input
+                type="radio"
+                name="reply"
+                id="reply-phone"
+                value="phone"
+                required
+              />
+              <label for="reply-phone">전화로 연락주세요</label> <!-- 라디오 버튼과 레이블 -->
+            </li>
+            <li class="inline-control">
+              <input
+                type="radio"
+                name="reply"
+                id="reply-email"
+                value="email"
+                required
+              />
+              <label for="reply-email">이메일로 연락주세요</label>
+            </li>
+            <li class="inline-control">
+              <input
+                type="radio"
+                name="reply"
+                id="reply-none"
+                value="none"
+                required
+              />
+              <label for="reply-none">회신하지 마세요</label>
+            </li>
+          </ul>
+        </section>
+        <section class="inline-control checkbox">
+          <input
+            type="checkbox"
+            name="accept-terms"
+            id="accept-terms"
+            required
+          />
+          <label for="accept-terms">약관에 동의합니다</label> <!-- 체크박스와 레이블 -->
+        </section>
+        <section id="form-actions">
+          <button type="reset" class="btn-empty">지우기</button> <!-- 리셋 버튼 -->
+          <button type="submit" class="btn-filled">제출</button> <!-- 제출 버튼 -->
+        </section>
+      </form>
+      <!-- 문의 양식 종료 -->
+    </main>
+  </body>
+</html>
