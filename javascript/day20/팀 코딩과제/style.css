@@ -1,0 +1,134 @@
+*{
+    /*reset.css와 같은 설정. 여백이랑 경계선까지 박스 영역에 계산되게 box-sizing: border-box; 적용함*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 외부링크 접속했다고 글자색 안바뀌게 설정함*/
+a, a:link, a:visited{
+    color: inherited;
+    text-decoration: none;
+}
+li{
+    list-style-type: none;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+}
+
+/*헤더*/
+.container{
+    width: 1140px;
+    margin: 0 auto;
+}
+header{
+    position: fixed;
+    color: white;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 1rem;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+header nav ul{
+    display: flex;
+}
+header nav ul li{
+    padding: 10px;
+}
+/*버튼들을 투명처리하고 마우스 커서가 가면 손모양으로 변하*/
+header button{
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+/*글씨를 굵게 하고 글자크기를 일반 크기 2배로 설정*/
+header h1 button{
+    font-size: 2rem;
+    font-weight: bold;
+}
+/*글자크기를 일반 1.2배 설정*/
+header nav ul li button{
+    font-size: 1.2rem;
+    color: white;
+}
+
+/*main*/
+main{
+    width: 100%;
+    height: 100vh; /*높이의 100%만큼 지정*/
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0)), url('images/me.jpg') center center;
+    background-size:cover ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+main h2{
+    font-size: 2rem;
+}
+main h4{
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px 0;
+}
+main p{
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+main button.download{
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    color:white;
+    font-weight: bold;
+    cursor: pointer;
+}
+main button.mouse{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    /* 마우스 아이콘을 중간 맨 밑으로 위치*/
+    position: absolute;
+    bottom:1rem;
+    left:50%;
+    /*updown이란 이름의 애니메이션 효과를 정의해서 매 1초간 실행시키고 무한반복한다.*/
+    animation: upDown 1s ease-in-out infinite;
+    cursor: pointer;
+    transform: translateX(-50%);
+}
+@keyframes upDown{
+    0%{
+        bottom:1rem; /*바닥에서 16px 위로 이동*/
+    }
+    50%{
+        bottom:1.5rem; /*바닥에서 32px 위로 이동*/
+    }
+    100%{
+        bottom:1rem;/*바닥에서 16px 위로 이동*/
+    }
+}
+/*문장 맨 뒤에 깜빡이는 커서모양 애니메이션 효과를 구현*/
+main h2 span::after{
+    content:"";
+    height:40px;
+    width:3px; /*높이가 40px 너비가 3px인 하얀막대 생성*/
+    background-color: #fff;
+    display: inline-block;
+    animation: blink .7s ease-in-out infinite;
+}
+@keyframes blink{
+    0%{
+        opacity:1; /*불투명도 1 = 눈에 보임*/
+    }
+    100%{
+        opacity:0;/*불투명도 0 = 눈에 안보임*/
+    }
+}

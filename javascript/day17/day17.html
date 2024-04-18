@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //alert("hello");
+        //document.write("hello");
+        //장점: 과도한 경고 등의 사용자 부정적 경험 없이 메세지 출력이 가능
+        /*단점: 문서 전체를 읽어야한다 계층적 구조 중간에 추가되어 문서 구조에 예상치 못한 영향을 끼칠 수 있다
+              로드 시간 지연
+              동적인 콘텐츠 처리 어려움*/
+        console.log("hello");
+        /*개발자가 개발모드에서 내부적으로 메세지 출력
+        장점: 문서구조에 영향이 없다. 불필요한 부정적 인식 없음 */
+
+        /*단항 산술 연산자*/
+        let y = 10;
+        let result = y++; 
+        //console.log(result); 
+        //console.log(y);
+
+        let variable1;
+        let variable2 = 0;
+        let variable3 = null;
+        let variable4 = '';
+        console.log(variable1);
+        console.log(variable2);
+        console.log(variable3);
+        console.log(variable4);
+
+        let num = -10;
+        num = -num;
+        console.log("num :::::::   "+ num);
+        console.log(10 == '10');
+        // ==   두 수의 값이 같은가?  true
+        console.log(10 === '10');
+        // ===  두 수의 값이 같고 자료형도 같은가?  false
+
+
+        
+    </script>
+</body>
+</html>
